@@ -28,9 +28,6 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - uses: actions/checkout@v1
-    - uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '3.0.100'
     - uses: bacongobbler/azure-blob-storage-upload@v1.1.1
       with:
         source_dir: '.'
