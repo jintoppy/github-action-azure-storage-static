@@ -30,8 +30,9 @@ jobs:
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.0.100'
-    - uses: lauchacarro/Azure-Storage-Action@master
+    - uses: bacongobbler/azure-blob-storage-upload@v1.1.1
       with:
-        enabled-static-website: 'true'
-        folder: '.'
-        connection-string: ${{ secrets.CONNECTION_STRING }}
+        source_dir: '.'
+        container_name: '$web'
+        connection_string: ${{ secrets.CONNECTION_STRING }}
+        sync: true
